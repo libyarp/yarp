@@ -1,0 +1,15 @@
+package io.libyarp.simple;
+
+message SimpleRequest {
+    name string = 0;
+    email string = 1;
+}
+
+message SimpleResponse {
+    id int32 = 0;
+}
+
+service SimpleService {
+    register_user(SimpleRequest) -> stream SimpleResponse;
+    deregister_user(SimpleRequest) -> SimpleResponse;
+}
